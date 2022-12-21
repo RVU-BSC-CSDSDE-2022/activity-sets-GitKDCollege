@@ -7,14 +7,14 @@ void output(char *string1, char *string2, int result);
 
 int main()
 {
-   char string1[100], string2[100];
-   int result=0;
-    input_two_strings(string1, string2);
-    result=stringcompare(string1, 
-    string2);
-    // printf("%d",result);
-    output(string1, string2, result);
-     return 0;
+  char string1[100], string2[100];
+  int result=0;
+  input_two_strings(string1, string2);
+  result=stringcompare(string1, 
+  string2);
+  // printf("%d",result);
+  output(string1, string2, result);
+  return 0;
 }
 void input_two_strings(char *string1, char *string2)
 {
@@ -26,10 +26,23 @@ void input_two_strings(char *string1, char *string2)
 
 int stringcompare(char *string1, char *string2)
 {
-  int i;
+  int i,j;
+  for (i=0;string1[i]!='\0';i++)
+    {}
+  for (j=0;string2[j]!='\0';j++)
+    {}
+  int grt;
+  if (i-1<j-1)
+  {
+    grt=j;
+  }
+  else if (j-1<i-1)
+  {
+    grt=i;
+  }
   int count1=0,count2=0;
   int result=0;
-  for (i=0;i<5;i=i+1)
+  for (i=0;i<grt;i=i+1)
   {
   if (string1[i]>string2[i])
   {

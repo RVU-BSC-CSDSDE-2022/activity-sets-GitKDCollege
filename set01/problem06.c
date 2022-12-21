@@ -19,11 +19,11 @@ int input()
 
 void compare(int a, int b, int c, int *large)
 {
-  if((a>b)&&(a>c))
+  if((a>=b)&&(a>=c))
   {*large=a;}
-  else if((b>a)&&(b>c))
+  else if((b>=a)&&(b>=c))
     {*large=b;}
-  else if((c>a)&&(c>b))
+  else if((c>=a)&&(c>=b))
     {*large=c;}
 }
 

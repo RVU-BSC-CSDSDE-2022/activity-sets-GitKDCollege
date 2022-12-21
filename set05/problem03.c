@@ -8,7 +8,7 @@ struct camel
 typedef struct camel Camel;
 
 Camel input();
-void find_weight(Camel *c);
+float find_weight(Camel c);
 void output(Camel c);
 
 Camel input()
@@ -23,19 +23,20 @@ Camel input()
   return c;
 }
 
-void find_weight(Camel *c)
+float find_weight(Camel c)
 {
   float pi=3.1415;
   float temp;
   float sqrt;
   // float weight;
-  sqrt=(c->height*c->length)/2;
+  sqrt=(c.height*c.length)/2;
   temp=0;
   while (temp!=sqrt){
     temp=sqrt;
-    sqrt=(((c->height*c->length)/temp)+temp)/2;
+    sqrt=(((c.height*c.length)/temp)+temp)/2;
   }
-  c->weight=pi*(c->radius*c->radius*c->radius)*sqrt;
+  c.weight=pi*(c.radius*c.radius*c.radius)*sqrt;
+  return c.weight;
 }
 
 void output(Camel c)
@@ -47,7 +48,7 @@ int main()
 {
   Camel c;
   c=input();
-  find_weight(&c);
+  c.weight=find_weight(c);
   output(c);
   return 0;
 }
