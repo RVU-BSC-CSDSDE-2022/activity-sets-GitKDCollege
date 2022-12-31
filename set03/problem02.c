@@ -34,22 +34,22 @@ int is_triangle(float x1, float y1, float x2, float y2,float x3, float y3)
   int result;
   if ((d1==0)||(d2==0)||(d3==0))
   {
-    result=1;
+    result=0;
   }
   else
   {
-    result=0;
+    result=1;
   }
   return result;
 }
 
 void output(float x1, float y1, float x2, float y2, float x3, float y3, int result)
 {
-  if(result==1)
+  if(result==0)
   {
   printf("The Points (%.1f, %.1f), (%.1f, %.1f) and (%.1f, %.1f) do not form a Triangle\n",x1,y1,x2,y2,x3,y3);
   }
-  else if (result==0)
+  else if (result==1)
   {
     printf("The Points (%.1f, %.1f), (%.1f, %.1f) and (%.1f, %.1f) form a Triangle\n",x1,y1,x2,y2,x3,y3);
   }
