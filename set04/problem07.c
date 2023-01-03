@@ -33,7 +33,7 @@ Fraction input_fraction()
 
 int find_gcd(int a, int b)
 {
-  int gcd;
+  float gcd;
   int stop;
   if (a>b)
   {
@@ -57,15 +57,17 @@ int find_gcd(int a, int b)
 Fraction add_fractions(Fraction f1, Fraction f2)
 {
   Fraction result;
-  int hcf=find_gcd(f1.den,f2.den);
-  f1.num=f1.num*(hcf/f1.den);
-  f2.num=f2.num*(hcf/f2.den);
-  result.num=f1.num + f2.num;
+  float hcf=find_gcd(f1.den,f2.den);
   result.den=(f1.den*f2.den)/hcf;
+  f1.num=f1.num*(result.den/(f1.den));
+  f2.num=f2.num*(result.den/(f2.den));
+  result.num=f1.num + f2.num;
   return result;
 }
 
 void output(Fraction f1, Fraction f2, Fraction sum)
 {
-  printf("%d/%d + %d/%d = %d/%d\n",f1.num,f1.den,f2.num,f2.den,sum.num,sum.den);
+  int simplification;
+  simplification=find_gcd(sum.num,sum.den);
+  printf("%d/%d + %d/%d = %d/%d = %d/%d\n",f1.num,f1.den,f2.num,f2.den,sum.num,sum.den,sum.num/simplification,sum.den/simplification);
 }
