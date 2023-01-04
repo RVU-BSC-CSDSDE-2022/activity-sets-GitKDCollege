@@ -94,7 +94,7 @@ fibo(5) = 5
 ***Function Declarations***
 ```c
 int input_array_size();
-void init_array(int n, int a[n];
+void init_array(int n, int a[n]);
 void erotosthenes_sieve(int n, int a[n]);
 void output(int n, int a[n]);
 ```

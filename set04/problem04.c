@@ -9,12 +9,12 @@ void output(int n, float a[n], float x, float result);
 
 int main()
 {
+  float x;
+  x=input_x();
   int highest_degree;
   highest_degree=input_degree();
   float coeff[highest_degree];
   input_coefficients(highest_degree,coeff);
-  float x;
-  x=input_x();
   float result;
   result=evaluate_polynomial(highest_degree,coeff,x);
   output(highest_degree,coeff,x,result);

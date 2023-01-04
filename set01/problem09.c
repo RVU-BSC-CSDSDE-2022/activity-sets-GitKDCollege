@@ -31,7 +31,6 @@ float square_root(float n)
     {
       temp=sqrt;
       sqrt=((n/temp)+temp)/2;
-      //printf("%f",sqrt);
     }
   
   return sqrt;
