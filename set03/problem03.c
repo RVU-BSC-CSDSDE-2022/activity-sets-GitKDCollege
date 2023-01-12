@@ -25,9 +25,9 @@ int input_number()
 int is_prime(int n)
 {
   int i,result,count=0;
-  for (i=0;i<n;i++)
+  for (i=1;i<=n;i++)
     {
-      if (n%(i+1)==0)
+      if (n%i==0)
       {
         count=count+1;
       }

@@ -1,4 +1,9 @@
 #include <stdio.h>
+
+int input();
+int compare(int a, int b, int c);
+void output(int a, int b, int c, int large);
+
 int main(void){
   int a,b,c, large;
   a=input();
@@ -12,23 +17,30 @@ int main(void){
 int input()
 {
   int a;
-  printf("Enter number \n");
-  scanf("%d ",&a);
+  printf("Enter number\n");
+  scanf("%d",&a);
   return a;
   }
 
-int compare(int a, int b, int c, int large)
+int compare(int a, int b, int c)
 {
   int large;
-  if((a>=b)&&(a>=c))
+  // if((a>=b)&&(a>=c))
+  // {large=a;}
+  // else if((b>=a)&&(b>=c))
+  // {large=b;}
+  // else if((c>=a)&&(c>=b))
+  // {large=c;}
+  // --------------------------- //
+  if((a>b)&&(a>c))
   {large=a;}
-  else if((b>=a)&&(b>=c))
+  else if(b>c)
     {large=b;}
-  else if((c>=a)&&(c>=b))
+  else
     {large=c;}
   return large;
-
-  }
+  // --------------------------- //
+}
 
 void output(int a, int b, int c,int large)
 {

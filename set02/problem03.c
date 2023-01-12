@@ -23,23 +23,15 @@ int input_number()
 
 int is_composite(int n)
 {
-  int i,result;
+  int i=0,result=0;
   int count=0;
-  for (i=0;i<n;i++)
+  for (i=2;i*i<=n;i++)
     {
-      if (n%(i+1)==0)
+      if (n%i==0)
       {
-        count+=1;
+        result=1;
       }
     }
-  if (count==2)
-  {
-    result=0;
-  }
-  else
-  {
-    result=1;
-  }
   return result;
 }
 
