@@ -23,21 +23,21 @@ void input_n_and_r(int *n, int *r)
 
 int nCr(int n, int r)
 {
-  int n_r=n-r;
   int n_fact=1,r_fact=1,n_r_fact=1;
   int result;
   int i;
   for (i=1;i<=n;i++)
     {
-      n_fact=n_fact*i;
-    }
-  for (i=1;i<=r;i++)
-    {
-      r_fact=r_fact*i;
-    }
-  for (i=1;i<=n_r;i++)
-    {
-      n_r_fact=n_r_fact*i;
+      if (i<=r)
+      {
+        r_fact = r_fact * i;
+        n_r_fact = n_r_fact * i;
+      }
+      else if (i<=n-r)
+      {
+        n_r_fact = n_r_fact * i;
+      }
+      n_fact = n_fact * i;
     }
   result=n_fact/((n_r_fact)*(r_fact));
   return result;
