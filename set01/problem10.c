@@ -29,7 +29,7 @@ int stringcompare(char *string1, char *string2)
   int i;
   int count1=0,count2=0;
   int result=0;
-  for (i=0;(string1[i]!='\0' && string2[i]!='\0');i=i+1)
+  for (i=0;(string1[i]!='\0' || string2[i]!='\0');i=i+1)
   {
   if (string1[i]>string2[i])
   {
@@ -37,6 +37,7 @@ int stringcompare(char *string1, char *string2)
     if (count1>count2)
     {
       result=1;
+      break;
     }
   }
   else if(string2[i]>string1[i])
@@ -45,12 +46,8 @@ int stringcompare(char *string1, char *string2)
     if (count2>count1)
     {
       result=2;
+      break;
     }
-  }
-  else if (string1[i]==string2[i])
-  {
-      count1=count1;
-      count2=count2;
   }
   }
   return result;
