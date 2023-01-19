@@ -33,21 +33,13 @@ int stringcompare(char *string1, char *string2)
   {
   if (string1[i]>string2[i])
   {
-    count1=count1+1;
-    if (count1>count2)
-    {
       result=1;
       break;
-    }
   }
   else if(string2[i]>string1[i])
   {
-    count2=count2+1;
-    if (count2>count1)
-    {
       result=2;
       break;
-    }
   }
   }
   return result;
