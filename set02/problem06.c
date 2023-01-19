@@ -38,16 +38,5 @@ void str_reverse(char *str, char *rev_str)
 
 void output(char *a, char *reverse_a)
 {
-  int i;
-  printf("The Reverse of the Entered String ");
-  // int l;
-  // for (l=0;a[l]!='\0';l++)
-  //   {
-  //     printf("%c",a[i]);
-  //   }
-  printf(" is ");
-  for (i=0;reverse_a[i]!='\0';i++)
-    {
-      printf("%c",reverse_a[i]);
-    }
+  printf("The Reverse of the Entered String %s is %s\n",a,reverse_a);
 }
