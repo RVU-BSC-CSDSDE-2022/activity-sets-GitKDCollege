@@ -56,14 +56,13 @@ Complex add_n_complex(int n, Complex c[n])
 void output(int n, Complex c[n], Complex result)
 { 
   printf("The Sum of Entered Complex Numbers ");
-  for (int i=0;i<n;i++)
+  int i=0;
+  while(i<n-1)
     {
-      if (i<n-1)
-      {printf("%.1f+%.1fi + ",c[i].real,c[i].img);}
-      else
-      {printf("%.1f+%.1fi",c[i].real,c[i].img);}
+      printf("%.1f+%.1fi + ",c[i].real,c[i].img);
+      i++;
     }
-  printf(" is %.1f+%.1fi",result.real,result.img);
+  printf("%.1f+%.1fi is %.1f+%.1fi",c[i].real,c[i].img,result.real,result.img);
 }
 
 int main()

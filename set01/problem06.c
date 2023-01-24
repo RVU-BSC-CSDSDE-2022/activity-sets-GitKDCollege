@@ -1,4 +1,9 @@
 #include <stdio.h>
+
+int input();
+void compare(int a, int b, int c, int *large);
+void output(int a, int b, int c, int large);
+
 int main(void){
   int a,b,c, large;
   a=input();
@@ -19,11 +24,11 @@ int input()
 
 void compare(int a, int b, int c, int *large)
 {
-  if((a>=b)&&(a>=c))
+  if((a>b)&&(a>c))
   {*large=a;}
-  else if((b>=a)&&(b>=c))
+  else if(b>=c)
     {*large=b;}
-  else if((c>=a)&&(c>=b))
+  else
     {*large=c;}
 }
 

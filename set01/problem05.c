@@ -24,7 +24,6 @@ int input()
 
 int compare(int a, int b, int c)
 {
-  int large;
   // if((a>=b)&&(a>=c))
   // {large=a;}
   // else if((b>=a)&&(b>=c))
@@ -33,12 +32,11 @@ int compare(int a, int b, int c)
   // {large=c;}
   // --------------------------- //
   if((a>b)&&(a>c))
-  {large=a;}
+  {return a;}
   else if(b>c)
-    {large=b;}
+    {return b;}
   else
-    {large=c;}
-  return large;
+    {return c;}
   // --------------------------- //
 }
 

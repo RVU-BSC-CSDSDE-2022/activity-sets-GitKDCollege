@@ -47,16 +47,10 @@ int sum_n_array(int n, int a[n])
 void output(int n, int a[n],int sum)
 {
   int i=0;
-  for(i=0;i<n;i++)
+  while(i<n-1)
     {
-      if (i<n-1)
-      {
-        printf("%d+", a[i]);
-      }
-      else
-      {
-        printf("%d",a[i]);
-      }
+      printf("%d + ", a[i]);
+      i++;
     }
-  printf(" is %d", sum);
+  printf("%d = %d",a[i],sum);
 }
