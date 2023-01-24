@@ -1,4 +1,9 @@
 #include <stdio.h>
+
+int input();
+int sum_n_nos(int n);
+void output(int n, int sum);
+
 int main(void)
 {
   int n,sum;
@@ -18,9 +23,7 @@ int input()
 
 int sum_n_nos(int n)
 {
-  int sum;
-  sum=(n*(n+1))/2;
-  return sum;
+  return (n*(n+1))/2;
 }
 
 void output(int n, int sum)
