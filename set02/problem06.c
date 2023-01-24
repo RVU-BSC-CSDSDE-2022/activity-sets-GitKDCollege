@@ -28,7 +28,6 @@ void str_reverse(char *str, char *rev_str)
   int i,j;
   for (j=0;str[j]!='\0';j++)
     {}
-  
   for (i=0;str[i]!='\0';i++)
     {
       rev_str[i]=str[j-1-i];
