@@ -26,21 +26,12 @@ int input()
 int find_gcd(int a, int b)
 {
   int i;
-  int grt;
   int store;
-  if (a<b)
-  {
-    grt=a;
-  }
-  else if (b<a)
-  {
-    grt=b;
-  }
-  for (i=0;i<grt;i++)
+  for (i=1;(i<=a||i<=b);i++)
     {
-       if ((a%(i+1)==0) && (b%(i+1)==0))     
+       if ((a%i==0) && (b%i==0))     
        {
-         store=i+1;
+         store=i;
        }
     }
   return store;
