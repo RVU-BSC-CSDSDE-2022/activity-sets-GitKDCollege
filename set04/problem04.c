@@ -58,16 +58,11 @@ float evaluate_polynomial(int n, float a[n], float x)
 
 void output(int n, float a[n], float x, float result)
 {
-  for (int i=0;i<=n;i++)
+  int i=0;
+  while(i<=n-1)
     {
-      if (i<=n-1)
-      {
-        printf("%.2f * %.2f^%d + ",a[i],x,i);
-      }
-      else
-      {
-        printf("%.2f * %.2f^%d",a[i],x,i);
-      }
+      printf("%.2f * %.2f^%d + ",a[i],x,i);
+      i++;
     }
-  printf(" = %.2f\n",result);
+  printf("%.2f * %.2f^%d = %.2f\n",a[i],x,i,result);
 }

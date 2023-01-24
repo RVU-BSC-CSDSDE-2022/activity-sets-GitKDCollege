@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<math.h>
 
 struct _camel 
 {
@@ -45,22 +46,12 @@ void input(int n, Camel c[n], float *truck_weight)
 void find_camel_weight(int n, Camel c[n])
 {
   int i;
-  float sqrt[n];
-  float temp=0;
+  float sqrt_hl[n];
   float pi=3.1412;
   for (i=0;i<n;i++)
   {
-    sqrt[i]=((c[i].height)*(c[i].length));
-    while (temp!=sqrt[i])
-    {
-      temp=sqrt[i];
-      sqrt[i]=(((c[i].height*c[i].length)/temp)+temp)/2;
-    }
-  }
-  int j;
-  for (j=0;j<n;j++)
-  {
-    c[j].weight=pi*(c[j].radius*c[j].radius*c[j].radius)*sqrt[j];
+    sqrt_hl[i]=sqrt(c[i].height*c[i].length);
+    c[i].weight=pi*(c[i].radius*c[i].radius*c[i].radius)*sqrt_hl[i];
   }
 }
 

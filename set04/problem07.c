@@ -34,17 +34,8 @@ Fraction input_fraction()
 int find_gcd(int a, int b)
 {
   float gcd;
-  int stop;
-  if (a>b)
-  {
-    stop=b;
-  }
-  else
-  {
-    stop=a;
-  }
   int i;
-  for (i=1;i<=stop;i++)
+  for (i=1;(i<=a||i<=b);i++)
     {
       if ((a%i==0)&&(b%i==0))
       {

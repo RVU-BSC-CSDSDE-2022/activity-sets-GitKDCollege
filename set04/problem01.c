@@ -26,19 +26,14 @@ void input(int *num1, int *den1, int *num2, int *den2)
 void add(int num1, int den1, int num2, int den2, int *res_num, int *res_den)
 {
   int i,hcf,lcm;
-  int stop;
-  if (den1>den2){stop=den2;}
-  else if(den2>den1){stop=den1;}
-  for (i=1;i<=stop;i++)
+  for (i=1;(i<=den1||i<=den2);i++)
     {
       if ((den1%i==0)&&(den2%i==0))
       {
         hcf=i;
       }
     }
-  int prod;
-  prod=den1*den2;
-  lcm=prod/hcf;
+  lcm=(den1*den2)/hcf;
   num1=num1*(lcm/den1);
   num2=num2*(lcm/den2);
   *res_num=num1+num2;

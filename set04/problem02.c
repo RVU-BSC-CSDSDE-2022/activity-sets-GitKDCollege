@@ -36,9 +36,9 @@ Fraction compare(Fraction a, Fraction b, Fraction c)
   e=(b.num*1.0)/(b.den*1.0);
   f=(c.num*1.0)/(c.den*1.0);
   //Multiplied with 1.0 to make a.num(int) as a float.
-  if (d<=e && d<=f){return a;}
-  else if (e<=d && e<=f){return b;}
-  else if (f<=d && f<=e){return c;}
+  if (d<e && d<f){return a;}
+  else if (e<=f){return b;}
+  else{return c;}
 }
 
 void output(Fraction a, Fraction b, Fraction c, Fraction smallest)

@@ -26,20 +26,23 @@ void input_camel_details(float *radius, float *height, float *length)
 
 int find_mood(float radius, float height, float length)
 {
-  int mood=0;
   if ((radius<height) && (radius<length))
   {
-    mood=-1;
+    return -1;
   }
   else if ((height<length) && (height<radius))
   {
-    mood=0;
+    return 0;
   }
   else if ((length<height) && (length<radius))
   {
-    mood=1;
+    return 1;
   }
-  return mood;
+  else
+  {
+    return 2;
+  }
+  
 }
 
 void output(float radius, float height, float length, int mood)
@@ -55,6 +58,10 @@ void output(float radius, float height, float length, int mood)
   else if (mood==1)
   {
     printf("The Camel is Tense\n");
+  }
+  else
+  {
+    printf("The Camel is Just Fine\n");
   }
 }
 

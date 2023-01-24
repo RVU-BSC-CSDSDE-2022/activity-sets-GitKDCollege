@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<math.h>
 
 struct camel
 {
@@ -27,15 +28,9 @@ float find_weight(Camel c)
 {
   float pi=3.1415;
   float temp;
-  float sqrt;
-  // float weight;
-  sqrt=(c.height*c.length)/2;
-  temp=0;
-  while (temp!=sqrt){
-    temp=sqrt;
-    sqrt=(((c.height*c.length)/temp)+temp)/2;
-  }
-  c.weight=pi*(c.radius*c.radius*c.radius)*sqrt;
+  float sqrt_hl;
+  sqrt_hl=sqrt(c.height*c.length);
+  c.weight=pi*(c.radius*c.radius*c.radius)*sqrt_hl;
   return c.weight;
 }
 

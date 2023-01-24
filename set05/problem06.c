@@ -38,7 +38,6 @@ void input(int n, int a[n])
 float odd_average(int n, int a[n])
 {
   int i,sum=0,count=0;
-  float avg;
   for (i=0;i<n;i++)
     {
       if (a[i]%2!=0)
@@ -47,8 +46,7 @@ float odd_average(int n, int a[n])
         count+=1;
       }
     }
-  avg=sum/count;
-  return avg;
+  return sum/count;
 }
 
 void output(float avg)

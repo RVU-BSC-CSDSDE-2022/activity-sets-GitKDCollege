@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<math.h>
 
 void input_camel_details(float *radius, float *height, float *length);
 float find_weight(float radius, float height, float length);
@@ -17,17 +18,9 @@ void input_camel_details(float *radius, float *height, float *length)
 float find_weight(float radius, float height, float length)
 {
   float pi=3.1415;
-  float temp;
-  float sqrt;
-  float weight;
-  sqrt=(height*length)/2;
-  temp=0;
-  while (temp!=sqrt){
-    temp=sqrt;
-    sqrt=(((height*length)/temp)+temp)/2;
-  }
-  weight=pi*(radius*radius*radius)*sqrt;
-  return weight;
+  float sqrt_hl;
+  sqrt_hl=sqrt(height*length);
+  return pi*(radius*radius*radius)*sqrt_hl;
 }
 
 void output(float radius, float height, float length, float weight)

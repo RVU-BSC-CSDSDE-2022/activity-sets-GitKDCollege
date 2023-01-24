@@ -53,17 +53,8 @@ void input_n_fractions(int n, Fraction f[n])
 int find_gcd(int a, int b)
 {
   float gcd;
-  int stop;
-  if (a>b)
-  {
-    stop=b;
-  }
-  else
-  {
-    stop=a;
-  }
   int i;
-  for (i=1;i<=stop;i++)
+  for (i=1;(i<=a||i<=b);i++)
     {
       if ((a%i==0)&&(b%i==0))
       {
@@ -100,16 +91,11 @@ void output(int n, Fraction f[n], Fraction sum)
 {
   int simplification_factor;
   simplification_factor=find_gcd(sum.num,sum.den);
-  for (int i=0;i<n;i++)
+  int i=0;
+  while(i<n-1)
     {
-      if (i<n-1)
-      {
-        printf("%d/%d + ",f[i].num,f[i].den);
-      }
-      else
-      {
-        printf("%d/%d ",f[i].num,f[i].den);
-      }
+      printf("%d/%d + ",f[i].num,f[i].den);
+      i++;
     }
-  printf("= %d/%d = %d/%d\n",sum.num,sum.den,sum.num/simplification_factor,sum.den/simplification_factor);
+  printf("%d/%d = %d/%d = %d/%d\n",f[i].num,f[i].den,sum.num,sum.den,sum.num/simplification_factor,sum.den/simplification_factor);
 }
