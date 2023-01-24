@@ -24,32 +24,20 @@ int input_number()
 
 int is_prime(int n)
 {
-  int i,result,count=0;
-  for (i=1;i<=n;i++)
+  int i,result=1;
+  for (i=2;i*i<=n;i++)
     {
       if (n%i==0)
       {
-        count=count+1;
+        result=0;
       }
     }
-  if (count==2)
-  {
-    result=1;
-  }
-  else
-  {
-    result=0;
-  }
   return result;
 }
 
 void output(int n, int result)
 {
-  if (n==0)
-  {
-    printf("%d is neither a Prime Number nor a Composite Number\n",n);
-  }
-  else if ((n==1)||(result==1))
+  if (result==1)
   {
     printf("%d is a Prime Number\n",n);
   }

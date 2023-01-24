@@ -31,25 +31,23 @@ int is_triangle(float x1, float y1, float x2, float y2,float x3, float y3)
   d1=sqrt((pow(y2-y1,2))+(pow(x2-x1,2)));
   d2=sqrt((pow(y3-y2,2))+(pow(x3-x2,2)));
   d3=sqrt((pow(y3-y1,2))+(pow(x3-x1,2)));
-  int result;
   if ((d1==0)||(d2==0)||(d3==0))
   {
-    result=0;
+    return 1;
   }
   else
   {
-    result=1;
+    return 0;
   }
-  return result;
 }
 
 void output(float x1, float y1, float x2, float y2, float x3, float y3, int result)
 {
-  if(result==0)
+  if(result==1)
   {
   printf("The Points (%.1f, %.1f), (%.1f, %.1f) and (%.1f, %.1f) do not form a Triangle\n",x1,y1,x2,y2,x3,y3);
   }
-  else if (result==1)
+  else
   {
     printf("The Points (%.1f, %.1f), (%.1f, %.1f) and (%.1f, %.1f) form a Triangle\n",x1,y1,x2,y2,x3,y3);
   }

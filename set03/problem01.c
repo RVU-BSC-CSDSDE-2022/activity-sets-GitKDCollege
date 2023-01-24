@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<math.h>
 
 void input(float *x1, float *y1, float *x2, float *y2);
 float find_distance(float x1, float y1, float x2, float y2);
@@ -23,18 +24,7 @@ void input(float *x1, float *y1, float *x2, float *y2)
 
 float find_distance(float x1, float y1, float x2, float y2)
 {
-  float distance;
-  float temp=0;
-  float calc;
-  float sqrt;
-  calc=((x2-x1)*(x2-x1))+((y2-y1)*(y2-y1));
-  sqrt=calc;
-  while (temp!=sqrt){
-    temp=sqrt;
-    sqrt=((calc/temp)+temp)/2;
-  }
-  distance=sqrt;
-  return distance;
+  return sqrt((pow((y2-y1),2))+(pow((x2-x1),2)));
 }
 
 void output(float x1, float y1, float x2, float y2, float distance)

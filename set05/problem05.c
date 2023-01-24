@@ -11,7 +11,7 @@ int main()
   float sum;
   sum=borga_x(x);
   float result;
-  result=1+sum;
+  result=sum;
   output(x,result);
   return 0;
 }
@@ -27,12 +27,12 @@ float borga_x(int x)
 {
   float num=1;
   float den;
-  float sum=0;
+  float sum=1;
   int i=1;
   int j=1;
   while (i>0){
       den=1;
-      for (j=1;j<((2*i)+2);j++){
+      for (j=1;j<=((2*i)+1);j++){
           den=den*j;
       }
       num=num*x;

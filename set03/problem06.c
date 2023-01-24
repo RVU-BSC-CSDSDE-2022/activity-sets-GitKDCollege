@@ -29,12 +29,18 @@ int sub_str_index(char* string, char* substring)
   int i,j;
   for (i=0;i<strlen(string);i++)
     {
-      if ((string[i]==substring[0])&&(string[i+strlen(substring)-1]==substring[strlen(substring)-1]))
+      if ((string[i]==substring[0]))
         {
           index=i;
+          for (j=i;j<=i+strlen(substring)-1;j++)
+            {
+              if (string[j]!=substring[j-i])
+              {
+                return -1;
+              }
+            }
           break;
         }
-      else{index=-1;}
     }
   return index;
 }
