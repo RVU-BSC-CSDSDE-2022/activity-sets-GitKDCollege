@@ -37,7 +37,7 @@ Fraction compare(Fraction a, Fraction b, Fraction c)
   f=(c.num*1.0)/(c.den*1.0);
   //Multiplied with 1.0 to make a.num(int) as a float.
   if (d<e && d<f){return a;}
-  else if (e<=f){return b;}
+  else if (e<f){return b;}
   else{return c;}
 }
 

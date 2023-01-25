@@ -10,9 +10,7 @@ int main()
   char string1[100], string2[100];
   int result=0;
   input_two_strings(string1, string2);
-  result=stringcompare(string1, 
-  string2);
-  // printf("%d",result);
+  result=stringcompare(string1, string2);
   output(string1, string2, result);
   return 0;
 }
@@ -55,47 +53,3 @@ void output(char *string1, char *string2, int result)
    else if (result==0)
    {printf("Strings are equal\n");}
 }
-
-
-
-
-//      WITHOUT FUNCTION DECLARATION
-  // char string[100];
-  // char string[100];
-  // int i;
-  // int count1;
-  // count1=0;
-  // int count2;
-  // count2=0;
-  // printf("Enter string-1\n");
-  // scanf("%s",&s1);
-  // printf("Enter string-2\n");
-  // scanf("%s",&s2);
-  // for (i=0;i<5;i=i+1)
-  // {
-  // if (s1[i]>s2[i])
-  // {
-  //   count1=count1+1;
-  // }
-  // else if(s2[i]>s1[i])
-  // {
-  //   count2=count2+1;
-  // }
-  // else if (s1[i]=s2[i])
-  // {
-    
-  // }
-  // }
-  
-  // if (count1>count2)
-  // {
-  //   printf("%s is greater than %s",s1,s2);
-  // }
-  // else if (count2>count1)
-  // {
-  //   printf("%s is greater than %s",s2,s1);
-  // }
-  // else if(count1=count2)
-  // {
-  //   printf("Both the strings are same");
-  // }

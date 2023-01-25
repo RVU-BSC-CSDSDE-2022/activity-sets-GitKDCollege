@@ -9,9 +9,9 @@ int main()
 {
   int index;
   char string[100],substring[100];
-  input_string(&string,&substring);
-  index=sub_str_index(&string,&substring);
-  output(&string,&substring,index);
+  input_string(string,substring);
+  index=sub_str_index(string,substring);
+  output(string,substring,index);
   return 0;
 }
 
@@ -25,7 +25,7 @@ void input_string(char *a, char *b)
 
 int sub_str_index(char* string, char* substring)
 {
-  int index;
+  int index=-1;
   int i,j;
   for (i=0;i<strlen(string);i++)
     {
@@ -36,10 +36,13 @@ int sub_str_index(char* string, char* substring)
             {
               if (string[j]!=substring[j-i])
               {
-                return -1;
+                index = -1;
               }
             }
-          break;
+          if (index!=-1)
+          {
+            break;
+          }
         }
     }
   return index;
