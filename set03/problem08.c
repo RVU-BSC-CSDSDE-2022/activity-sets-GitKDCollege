@@ -79,11 +79,13 @@ float find_distance(Point a, Point b)
 void find_perimeter(Polygon *p)
 {
   p->perimeter=0;
-  int i;
-  for (i=0;i<p->n;i++)
+  int i=0;
+  while (i<p->n-1)
     {
       p->perimeter=p->perimeter + find_distance(p->sides[i].p1,p->sides[i+1].p1);
+      i++;
     }
+  p->perimeter=p->perimeter + find_distance(p->sides[i].p1,p->sides[0].p1);
 }
 
 void output(Polygon p)
