@@ -27,18 +27,18 @@ void input_triangle(float *x1, float *y1, float *x2, float *y2, float *x3, float
 
 int is_triangle(float x1, float y1, float x2, float y2,float x3, float y3)
 {
-  float d1,d2,d3;
-  d1=sqrt((pow(y2-y1,2))+(pow(x2-x1,2)));
-  d2=sqrt((pow(y3-y2,2))+(pow(x3-x2,2)));
-  d3=sqrt((pow(y3-y1,2))+(pow(x3-x1,2)));
-  if ((d1==0)||(d2==0)||(d3==0))
+  float area;
+  int result;
+  area = 0.5 * fabs( (x1*fabs(y2-y3)) + (x2*fabs(y3-y1)) + (x3*fabs(y1-y2)) );
+  if (area==0)
   {
-    return 1;
+    result=0;
   }
   else
   {
-    return 0;
+    result=1;
   }
+  return result;
 }
 
 void output(float x1, float y1, float x2, float y2, float x3, float y3, int result)
